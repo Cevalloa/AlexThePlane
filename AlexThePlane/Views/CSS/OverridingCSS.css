@@ -1,0 +1,10 @@
+﻿@font-face{
+
+	font-family: myFirstFont;
+	src:url(avenir-next-bold.ttf)
+}
+
+body {
+    color: white;
+    font-family:myFirstFont;
+}

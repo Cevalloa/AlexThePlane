@@ -1,0 +1,101 @@
+﻿@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	
+}
+
+<script>
+    var dt = '@ViewBag.EndDate';
+    var dateAr = dt.split('-');
+    var newDate = dateAr[1] + '/' + dateAr[0] + '/' + dateAr[2];
+
+    var end = new Date(dateAr[1] + '/' + dateAr[0] + '/' + dateAr[2]);
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+       var now = new Date();
+       var distance = end - now;
+       if (distance < 0) {
+           clearInterval(timer);
+           document.getElementById('countdown').innerHTML = 'EXPIRED!';
+           window.location.href = '/Home/Index';
+
+           return;
+       }
+    var days = Math.floor(distance / _day);
+    var hours = Math.floor((distance % _day) / _hour);
+    var minutes = Math.floor((distance % _hour) / _minute);
+    var seconds = Math.floor((distance % _minute) / _second);
+
+    document.getElementById('countdown').innerHTML = days + ' Days, ';
+    document.getElementById('countdown').innerHTML += hours + ' hours, ';
+    document.getElementById('countdown').innerHTML += minutes + ' minutes, ';
+    document.getElementById('countdown').innerHTML += seconds + ' seconds ';
+   }
+
+    timer = setInterval(showRemaining, 1000);
+</script>
+
+<div class="container mx-auto py-3 text-xs-center w-100" style="background-color:#fc2d07;">
+	<h1 class="display-3"> A Different City Every Weekend
+	</h1>
+
+</div>
+
+<div class="container py-3 text-xs-center w-100" style="background-color:#3ecde3;">
+	<h1>The 2016 travel video & launch of this blog starts boarding in</h1><br>
+	<h3 id="countdown"> </h3>
+
+	<!--<h3>5 Days, 4 hours, 6 minutes, 0 seconds<br></h3><br><br> -->
+	<h2 id="timecountdown"></h2> <br><br>
+	
+	<h4> Watch the 2015 video here!  </h4>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/mOz0hEMaJcc" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="container mx-auto py-3 text-xs-center w-100" style="background-color:#42cc55;">
+	
+	<div class="row mx-auto">
+	<h1>The checklist to date</h1><br>
+	</div>
+				
+	<div class="row mx-auto">
+
+		<div class="col-lg-4 col-sm-3">
+		</div>
+		<div class="col-lg-2 col-sm-3 col-xs-6">
+			<h2>21/50</h2>			
+			<h5>States</h5>			
+		</div>
+
+		
+		<div class="col-lg-2 col-sm-3 col-xs-6">
+				<h2>8/193</h2>
+				<h5>Countries</h5>
+		</div>
+
+		<div class="col-lg-4 col-sm-3">
+		</div>
+	</div>
+
+	<br>
+	
+	<h4 class="">
+		There are still a lot of places to discover! <br>
+		And way more people to meet!
+	</h4>
+</div>
+
+<div class="container mx-auto py-3 text-xs-center w-100" style="background-color:#26292e">
+	<h2 class="display-4">This website has been coded with <span style="color:#fc2d07;">love </span> by:<br> 
+	</h2>
+	<h1 class="display-5"><a href="https://www.instagram.com/favorsthebold/" style="color:#3ecde3;">@@FavorsTheBold</a></h1>
+</div>
+
+
+
+<!-- <h2>Welcome to ASP.NET MVC @ViewData["Version"] on @ViewData["Runtime"]!</h2> -->
