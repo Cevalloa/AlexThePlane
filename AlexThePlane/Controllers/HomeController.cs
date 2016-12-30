@@ -24,7 +24,7 @@ namespace AlexThePlane.Controllers
 
 			//ViewBag.Rem_Time = Session["Rem_Time"];
 			//ViewBag.Message = "Modifty this template to jump start it";
-
+			//test
 			if (Session["EndDate"] == null)
 			{
 				var endDate = new DateTime(
