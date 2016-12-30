@@ -89,7 +89,6 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\OverridingCSS.css" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
