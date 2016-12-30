@@ -93,6 +93,8 @@
     <None Include="global.json" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\Web\Microsoft.Web.Publishing.targets" />
+
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
